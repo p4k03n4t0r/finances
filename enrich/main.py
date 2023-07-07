@@ -13,9 +13,7 @@ def get_category(party):
     else:
         while True:
             try:
-                question = f"""Which budget category does a transaction to "{party}" fall under? 
-                It's probably the name of a dutch company.
-                Only send a single word in lower case without any punctuation as answer."""
+                question = f'Which budget category does a transaction to "{party}" fall under? It\'s probably a Dutch name of a Dutch company. Only send a single word in lower case without any punctuation as answer.'
                 chat_completion = openai.ChatCompletion.create(
                     model="gpt-3.5-turbo",
                     messages=[{"role": "user", "content": question}],
