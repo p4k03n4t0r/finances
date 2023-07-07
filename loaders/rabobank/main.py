@@ -2,9 +2,9 @@ import os
 import csv
 import json
 
+transactions = []
 for file in os.listdir("input/"):
     if file.endswith(".csv"):
-        transactions = []
         with open(f"input/{file}", encoding="ISO-8859-1") as f:
             reader = list(csv.reader(f, delimiter=","))
             header = reader[0]
@@ -26,9 +26,8 @@ for file in os.listdir("input/"):
                     }
                 )
 
-        with open(
-            f"output/rabobank_{file}.json",
-            "w",
-            encoding="ISO-8859-1",
-        ) as f:
-            json.dump(transactions, f, indent=4)
+with open(
+    f"output/rabobank.json",
+    "w",
+) as f:
+    json.dump(transactions, f, indent=4)

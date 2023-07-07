@@ -13,9 +13,12 @@ for file in os.listdir("input/"):
     if file.endswith(".xml"):
         with open(f"input/{file}") as f:
             transactions_for_date = xmltodict.parse(f.read())
-            for entry in transactions_for_date["Document"]["BkToCstmrStmt"]["Stmt"][
-                "Ntry"
-            ]:
+            entries = transactions_for_date["Document"]["BkToCstmrStmt"]["Stmt"]["Ntry"]
+            # If there is a single entry, the XML parser doesn't make it a list
+            # so this 'hack' ensures it's a list
+            if "Amt" in entries:
+                entries = [entries]
+            for entry in entries:
                 if entry["Amt"]["@Ccy"] != "EUR":
                     raise Exception(f"Unexpected currency ${entry['Amt']['@Ccy']}")
                 amount_sign = "-" if entry["CdtDbtInd"] == "DBIT" else "+"
@@ -39,5 +42,5 @@ for file in os.listdir("input/"):
                     }
                 )
 
-    with open(f"output/abn_amro_{file}.json", "w") as f:
-        json.dump(transactions, f, indent=4)
+with open(f"output/abn_amro.json", "w") as f:
+    json.dump(transactions, f, indent=4)
