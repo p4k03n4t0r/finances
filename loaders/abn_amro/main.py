@@ -29,14 +29,25 @@ for file in os.listdir("input/"):
                         party = entry["NtryDtls"]["TxDtls"]["RltdPties"]["Dbtr"]["Nm"]
                 else:
                     party = entry["AddtlNtryInf"][32:].split(",PAS064")[0]
-                if "NtryDtls" in entry and "RmtInf" in entry["NtryDtls"]["TxDtls"]:
+                if (
+                    "NtryDtls" in entry
+                    and "RmtInf" in entry["NtryDtls"]["TxDtls"]
+                    and "Ustrd" in entry["NtryDtls"]["TxDtls"]["RmtInf"]
+                ):
                     description = entry["NtryDtls"]["TxDtls"]["RmtInf"]["Ustrd"]
                 else:
                     description = entry["AddtlNtryInf"]
+                if "AcctSvcrRef" in entry:
+                    id = entry["AcctSvcrRef"]
+                else:
+                    id = hash(entry["AddtlNtryInf"])
                 transactions.append(
                     {
+                        "id": id,
                         "date": entry["BookgDt"]["Dt"],
-                        "amount": float(amount_sign + entry["Amt"]["#text"]),
+                        "amount": float(entry["Amt"]["#text"]),
+                        "net_amount": float(amount_sign + entry["Amt"]["#text"]),
+                        "credit_or_debit": amount_sign,
                         "party": party,
                         "description": description,
                     }

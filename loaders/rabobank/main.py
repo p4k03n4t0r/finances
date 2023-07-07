@@ -15,12 +15,16 @@ for file in os.listdir("input/"):
                     transaction[header[i]] = line[i]
                 if transaction["Munt"] != "EUR":
                     raise Exception(f"Unexpected currency {transaction['Munt']}")
+                amount = transaction["Bedrag"].replace(".", "").replace(",", ".")
+                amount_sign = amount[0]
+                amount = amount[1:]
                 transactions.append(
                     {
+                        "id": transaction["Transactiereferentie"],
                         "date": transaction["Datum"],
-                        "amount": float(
-                            transaction["Bedrag"].replace(".", "").replace(",", ".")
-                        ),
+                        "amount": float(amount),
+                        "net_amount": float(amount_sign + amount),
+                        "credit_or_debit": amount_sign,
                         "party": transaction["Naam tegenpartij"],
                         "description": transaction["Omschrijving-1"],
                     }
