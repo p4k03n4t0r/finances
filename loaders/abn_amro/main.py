@@ -20,7 +20,7 @@ for file in os.listdir("input/"):
                 entries = [entries]
             for entry in entries:
                 if entry["Amt"]["@Ccy"] != "EUR":
-                    raise Exception(f"Unexpected currency ${entry['Amt']['@Ccy']}")
+                    raise Exception(f"Unexpected currency {entry['Amt']['@Ccy']}")
                 amount_sign = "-" if entry["CdtDbtInd"] == "DBIT" else "+"
                 if "NtryDtls" in entry:
                     if entry["CdtDbtInd"] == "DBIT":

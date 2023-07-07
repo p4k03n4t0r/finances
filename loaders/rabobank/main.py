@@ -14,7 +14,7 @@ for file in os.listdir("input/"):
                 for i in range(len(line)):
                     transaction[header[i]] = line[i]
                 if transaction["Munt"] != "EUR":
-                    raise Exception(f"Unexpected currency ${transaction['Munt']}")
+                    raise Exception(f"Unexpected currency {transaction['Munt']}")
                 transactions.append(
                     {
                         "date": transaction["Datum"],
