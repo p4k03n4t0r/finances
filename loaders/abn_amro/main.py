@@ -41,6 +41,11 @@ for file in os.listdir("input/"):
                     id = entry["AcctSvcrRef"]
                 else:
                     id = hash(entry["AddtlNtryInf"])
+                account_balance = float(
+                    transactions_for_date["Document"]["BkToCstmrStmt"]["Stmt"]["Bal"][
+                        1
+                    ]["Amt"]["#text"]
+                )
                 transactions.append(
                     {
                         "id": id,
@@ -50,6 +55,8 @@ for file in os.listdir("input/"):
                         "credit_or_debit": amount_sign,
                         "party": party,
                         "description": description,
+                        "account_balance": account_balance,
+                        "bank": "ABN_AMRO",
                     }
                 )
 

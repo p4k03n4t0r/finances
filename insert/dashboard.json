@@ -1,0 +1,71 @@
+{
+  "version": "8.8.0",
+  "objects": [
+    {
+      "id": "3d6a3400-1e3e-11ee-bcca-47caf8d80a09",
+      "type": "dashboard",
+      "namespaces": [
+        "default"
+      ],
+      "coreMigrationVersion": "8.8.0",
+      "typeMigrationVersion": "8.7.0",
+      "updated_at": "2023-07-09T10:21:08.471Z",
+      "created_at": "2023-07-09T10:21:08.471Z",
+      "version": "WzMwLDFd",
+      "attributes": {
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"category.keyword : \\\"groceries\\\" \",\"language\":\"kuery\"},\"filter\":[]}"
+        },
+        "description": "",
+        "timeRestore": false,
+        "optionsJSON": "{\"useMargins\":true,\"syncColors\":false,\"syncCursor\":true,\"syncTooltips\":false,\"hidePanelTitles\":false}",
+        "panelsJSON": "[{\"version\":\"8.8.0\",\"type\":\"lens\",\"gridData\":{\"x\":0,\"y\":0,\"w\":24,\"h\":15,\"i\":\"6eb818b7-bcaa-47fa-9584-06ea6af8dd74\"},\"panelIndex\":\"6eb818b7-bcaa-47fa-9584-06ea6af8dd74\",\"embeddableConfig\":{\"attributes\":{\"title\":\"\",\"description\":\"\",\"visualizationType\":\"lnsXY\",\"type\":\"lens\",\"references\":[{\"type\":\"index-pattern\",\"id\":\"1d801ce1-c007-4f26-bfa9-447390a67bf0\",\"name\":\"indexpattern-datasource-layer-86d2564a-ed10-4d16-8f78-1fc3da9ce3a5\"}],\"state\":{\"visualization\":{\"legend\":{\"isVisible\":true,\"position\":\"right\"},\"valueLabels\":\"hide\",\"fittingFunction\":\"None\",\"axisTitlesVisibilitySettings\":{\"x\":true,\"yLeft\":true,\"yRight\":true},\"tickLabelsVisibilitySettings\":{\"x\":true,\"yLeft\":true,\"yRight\":true},\"labelsOrientation\":{\"x\":0,\"yLeft\":0,\"yRight\":0},\"gridlinesVisibilitySettings\":{\"x\":true,\"yLeft\":true,\"yRight\":true},\"preferredSeriesType\":\"bar_stacked\",\"layers\":[{\"layerId\":\"86d2564a-ed10-4d16-8f78-1fc3da9ce3a5\",\"accessors\":[\"d7517021-6437-49eb-9f58-39b886af92a8\"],\"position\":\"top\",\"seriesType\":\"bar_stacked\",\"showGridlines\":false,\"layerType\":\"data\",\"xAccessor\":\"c619a6f4-e2b9-4ff8-9f78-c183ab5bd107\",\"splitAccessor\":\"3e059d53-bb7a-45d1-b990-cbff27bb60ca\"}]},\"query\":{\"query\":\"credit_or_debit.keyword:\\\"-\\\" \",\"language\":\"kuery\"},\"filters\":[],\"datasourceStates\":{\"formBased\":{\"layers\":{\"86d2564a-ed10-4d16-8f78-1fc3da9ce3a5\":{\"columns\":{\"c619a6f4-e2b9-4ff8-9f78-c183ab5bd107\":{\"label\":\"date\",\"dataType\":\"date\",\"operationType\":\"date_histogram\",\"sourceField\":\"date\",\"isBucketed\":true,\"scale\":\"interval\",\"params\":{\"interval\":\"1M\",\"includeEmptyRows\":true,\"dropPartials\":false}},\"d7517021-6437-49eb-9f58-39b886af92a8\":{\"label\":\"Sum of amount\",\"dataType\":\"number\",\"operationType\":\"sum\",\"sourceField\":\"amount\",\"isBucketed\":false,\"scale\":\"ratio\",\"params\":{\"emptyAsNull\":true}},\"3e059d53-bb7a-45d1-b990-cbff27bb60ca\":{\"label\":\"Top 100 values of bank.keyword\",\"dataType\":\"string\",\"operationType\":\"terms\",\"scale\":\"ordinal\",\"sourceField\":\"bank.keyword\",\"isBucketed\":true,\"params\":{\"size\":100,\"orderBy\":{\"type\":\"column\",\"columnId\":\"d7517021-6437-49eb-9f58-39b886af92a8\"},\"orderDirection\":\"desc\",\"otherBucket\":true,\"missingBucket\":false,\"parentFormat\":{\"id\":\"terms\"},\"include\":[],\"exclude\":[],\"includeIsRegex\":false,\"excludeIsRegex\":false}}},\"columnOrder\":[\"3e059d53-bb7a-45d1-b990-cbff27bb60ca\",\"c619a6f4-e2b9-4ff8-9f78-c183ab5bd107\",\"d7517021-6437-49eb-9f58-39b886af92a8\"],\"incompleteColumns\":{},\"sampling\":1}}},\"textBased\":{\"layers\":{}}},\"internalReferences\":[],\"adHocDataViews\":{}}},\"enhancements\":{}}},{\"version\":\"8.8.0\",\"type\":\"lens\",\"gridData\":{\"x\":24,\"y\":0,\"w\":24,\"h\":15,\"i\":\"04559d8b-202c-4eaf-865c-a6b4c6227dd7\"},\"panelIndex\":\"04559d8b-202c-4eaf-865c-a6b4c6227dd7\",\"embeddableConfig\":{\"attributes\":{\"title\":\"\",\"description\":\"\",\"visualizationType\":\"lnsXY\",\"type\":\"lens\",\"references\":[{\"type\":\"index-pattern\",\"id\":\"1d801ce1-c007-4f26-bfa9-447390a67bf0\",\"name\":\"indexpattern-datasource-layer-86d2564a-ed10-4d16-8f78-1fc3da9ce3a5\"}],\"state\":{\"visualization\":{\"legend\":{\"isVisible\":true,\"position\":\"right\"},\"valueLabels\":\"hide\",\"fittingFunction\":\"None\",\"axisTitlesVisibilitySettings\":{\"x\":true,\"yLeft\":true,\"yRight\":true},\"tickLabelsVisibilitySettings\":{\"x\":true,\"yLeft\":true,\"yRight\":true},\"labelsOrientation\":{\"x\":0,\"yLeft\":0,\"yRight\":0},\"gridlinesVisibilitySettings\":{\"x\":true,\"yLeft\":true,\"yRight\":true},\"preferredSeriesType\":\"bar_stacked\",\"layers\":[{\"layerId\":\"86d2564a-ed10-4d16-8f78-1fc3da9ce3a5\",\"accessors\":[\"d7517021-6437-49eb-9f58-39b886af92a8\"],\"position\":\"top\",\"seriesType\":\"bar_stacked\",\"showGridlines\":false,\"layerType\":\"data\",\"xAccessor\":\"c619a6f4-e2b9-4ff8-9f78-c183ab5bd107\",\"splitAccessor\":\"3e059d53-bb7a-45d1-b990-cbff27bb60ca\"}]},\"query\":{\"query\":\"credit_or_debit.keyword:\\\"-\\\" \",\"language\":\"kuery\"},\"filters\":[],\"datasourceStates\":{\"formBased\":{\"layers\":{\"86d2564a-ed10-4d16-8f78-1fc3da9ce3a5\":{\"columns\":{\"c619a6f4-e2b9-4ff8-9f78-c183ab5bd107\":{\"label\":\"date\",\"dataType\":\"date\",\"operationType\":\"date_histogram\",\"sourceField\":\"date\",\"isBucketed\":true,\"scale\":\"interval\",\"params\":{\"interval\":\"1M\",\"includeEmptyRows\":true,\"dropPartials\":false}},\"d7517021-6437-49eb-9f58-39b886af92a8\":{\"label\":\"Sum of amount\",\"dataType\":\"number\",\"operationType\":\"sum\",\"sourceField\":\"amount\",\"isBucketed\":false,\"scale\":\"ratio\",\"params\":{\"emptyAsNull\":true}},\"3e059d53-bb7a-45d1-b990-cbff27bb60ca\":{\"label\":\"Top 100 values of party.keyword\",\"dataType\":\"string\",\"operationType\":\"terms\",\"scale\":\"ordinal\",\"sourceField\":\"party.keyword\",\"isBucketed\":true,\"params\":{\"size\":100,\"orderBy\":{\"type\":\"column\",\"columnId\":\"d7517021-6437-49eb-9f58-39b886af92a8\"},\"orderDirection\":\"desc\",\"otherBucket\":true,\"missingBucket\":false,\"parentFormat\":{\"id\":\"terms\"},\"include\":[],\"exclude\":[],\"includeIsRegex\":false,\"excludeIsRegex\":false,\"secondaryFields\":[]}}},\"columnOrder\":[\"3e059d53-bb7a-45d1-b990-cbff27bb60ca\",\"c619a6f4-e2b9-4ff8-9f78-c183ab5bd107\",\"d7517021-6437-49eb-9f58-39b886af92a8\"],\"incompleteColumns\":{},\"sampling\":1}}},\"textBased\":{\"layers\":{}}},\"internalReferences\":[],\"adHocDataViews\":{}}},\"enhancements\":{}},\"title\":\"\"},{\"version\":\"8.8.0\",\"type\":\"lens\",\"gridData\":{\"x\":0,\"y\":15,\"w\":24,\"h\":15,\"i\":\"97231a9a-aa59-4e94-9b25-7faf70a123cd\"},\"panelIndex\":\"97231a9a-aa59-4e94-9b25-7faf70a123cd\",\"embeddableConfig\":{\"attributes\":{\"title\":\"\",\"description\":\"\",\"visualizationType\":\"lnsXY\",\"type\":\"lens\",\"references\":[{\"type\":\"index-pattern\",\"id\":\"1d801ce1-c007-4f26-bfa9-447390a67bf0\",\"name\":\"indexpattern-datasource-layer-86d2564a-ed10-4d16-8f78-1fc3da9ce3a5\"}],\"state\":{\"visualization\":{\"legend\":{\"isVisible\":true,\"position\":\"right\"},\"valueLabels\":\"hide\",\"fittingFunction\":\"None\",\"axisTitlesVisibilitySettings\":{\"x\":true,\"yLeft\":true,\"yRight\":true},\"tickLabelsVisibilitySettings\":{\"x\":true,\"yLeft\":true,\"yRight\":true},\"labelsOrientation\":{\"x\":0,\"yLeft\":0,\"yRight\":0},\"gridlinesVisibilitySettings\":{\"x\":true,\"yLeft\":true,\"yRight\":true},\"preferredSeriesType\":\"bar_stacked\",\"layers\":[{\"layerId\":\"86d2564a-ed10-4d16-8f78-1fc3da9ce3a5\",\"accessors\":[\"d7517021-6437-49eb-9f58-39b886af92a8\"],\"position\":\"top\",\"seriesType\":\"bar_stacked\",\"showGridlines\":false,\"layerType\":\"data\",\"xAccessor\":\"c619a6f4-e2b9-4ff8-9f78-c183ab5bd107\",\"splitAccessor\":\"3e059d53-bb7a-45d1-b990-cbff27bb60ca\"}]},\"query\":{\"query\":\"credit_or_debit.keyword:\\\"-\\\" \",\"language\":\"kuery\"},\"filters\":[],\"datasourceStates\":{\"formBased\":{\"layers\":{\"86d2564a-ed10-4d16-8f78-1fc3da9ce3a5\":{\"columns\":{\"c619a6f4-e2b9-4ff8-9f78-c183ab5bd107\":{\"label\":\"date\",\"dataType\":\"date\",\"operationType\":\"date_histogram\",\"sourceField\":\"date\",\"isBucketed\":true,\"scale\":\"interval\",\"params\":{\"interval\":\"1M\",\"includeEmptyRows\":true,\"dropPartials\":false}},\"d7517021-6437-49eb-9f58-39b886af92a8\":{\"label\":\"Sum of amount\",\"dataType\":\"number\",\"operationType\":\"sum\",\"sourceField\":\"amount\",\"isBucketed\":false,\"scale\":\"ratio\",\"params\":{\"emptyAsNull\":true}},\"3e059d53-bb7a-45d1-b990-cbff27bb60ca\":{\"label\":\"Top 100 values of category.keyword\",\"dataType\":\"string\",\"operationType\":\"terms\",\"scale\":\"ordinal\",\"sourceField\":\"category.keyword\",\"isBucketed\":true,\"params\":{\"size\":100,\"orderBy\":{\"type\":\"column\",\"columnId\":\"d7517021-6437-49eb-9f58-39b886af92a8\"},\"orderDirection\":\"desc\",\"otherBucket\":true,\"missingBucket\":false,\"parentFormat\":{\"id\":\"terms\"},\"include\":[],\"exclude\":[],\"includeIsRegex\":false,\"excludeIsRegex\":false,\"secondaryFields\":[]}}},\"columnOrder\":[\"3e059d53-bb7a-45d1-b990-cbff27bb60ca\",\"c619a6f4-e2b9-4ff8-9f78-c183ab5bd107\",\"d7517021-6437-49eb-9f58-39b886af92a8\"],\"incompleteColumns\":{},\"sampling\":1}}},\"textBased\":{\"layers\":{}}},\"internalReferences\":[],\"adHocDataViews\":{}}},\"enhancements\":{}},\"title\":\"\"}]",
+        "title": "Finance insights",
+        "version": 1
+      },
+      "references": [
+        {
+          "type": "index-pattern",
+          "id": "1d801ce1-c007-4f26-bfa9-447390a67bf0",
+          "name": "6eb818b7-bcaa-47fa-9584-06ea6af8dd74:indexpattern-datasource-layer-86d2564a-ed10-4d16-8f78-1fc3da9ce3a5"
+        },
+        {
+          "type": "index-pattern",
+          "id": "1d801ce1-c007-4f26-bfa9-447390a67bf0",
+          "name": "04559d8b-202c-4eaf-865c-a6b4c6227dd7:indexpattern-datasource-layer-86d2564a-ed10-4d16-8f78-1fc3da9ce3a5"
+        },
+        {
+          "type": "index-pattern",
+          "id": "1d801ce1-c007-4f26-bfa9-447390a67bf0",
+          "name": "97231a9a-aa59-4e94-9b25-7faf70a123cd:indexpattern-datasource-layer-86d2564a-ed10-4d16-8f78-1fc3da9ce3a5"
+        }
+      ],
+      "managed": false
+    },
+    {
+      "id": "1d801ce1-c007-4f26-bfa9-447390a67bf0",
+      "type": "index-pattern",
+      "namespaces": [
+        "default"
+      ],
+      "coreMigrationVersion": "8.8.0",
+      "typeMigrationVersion": "8.0.0",
+      "updated_at": "2023-07-09T10:21:47.224Z",
+      "created_at": "2023-07-09T10:13:40.345Z",
+      "version": "WzM3LDFd",
+      "attributes": {
+        "fieldAttrs": "{\"amount\":{\"count\":2},\"category.keyword\":{\"count\":1},\"date\":{\"count\":1},\"party\":{\"count\":1}}",
+        "title": "expenses*",
+        "timeFieldName": "date",
+        "sourceFilters": "[]",
+        "fields": "[]",
+        "fieldFormatMap": "{}",
+        "typeMeta": "{}",
+        "runtimeFieldMap": "{}",
+        "name": "expenses*"
+      },
+      "references": [],
+      "managed": false
+    }
+  ]
+}

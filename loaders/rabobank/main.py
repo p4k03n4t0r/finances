@@ -27,6 +27,8 @@ for file in os.listdir("input/"):
                         "credit_or_debit": amount_sign,
                         "party": transaction["Naam tegenpartij"],
                         "description": transaction["Omschrijving-1"],
+                        "account_balance": transaction["Saldo na trn"],
+                        "bank": "Rabobank",
                     }
                 )
 

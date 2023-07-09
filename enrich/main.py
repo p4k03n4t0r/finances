@@ -48,10 +48,14 @@ for file in os.listdir("output/"):
     if file.endswith(".json"):
         with open(f"output/{file}") as f:
             transactions = json.load(f)
+            transactions = list(
+                filter(
+                    lambda transaction: transaction["party"] not in BLACKLIST,
+                    transactions,
+                )
+            )
             for transaction in transactions:
                 party = transaction["party"]
-                if party in BLACKLIST:
-                    continue
                 transaction["category"] = get_category(party)
         with open(f"output/{file}", "w") as f:
             json.dump(transactions, f, indent=4)
