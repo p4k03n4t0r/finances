@@ -11,4 +11,4 @@ for file in os.listdir("output/"):
         with open(f"output/{file}") as f:
             transactions = json.load(f)
             for transaction in transactions:
-                es.index(index="expenses", document=transaction)
+                es.index(index="expenses", id=transaction["id"], document=transaction)

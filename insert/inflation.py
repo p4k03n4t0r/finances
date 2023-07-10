@@ -3,6 +3,7 @@ import os
 import csv
 
 es = Elasticsearch("http://localhost:9200")
+# TODO set id as _id?
 
 
 def to_date(year, dutch_month):
@@ -56,4 +57,4 @@ for file in os.listdir("output/"):
 
 
 for month in inflation:
-    es.index(index="inflation", document=month)
+    es.index(index="inflation", id=month["date"], document=month)
