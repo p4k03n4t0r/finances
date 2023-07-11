@@ -6,21 +6,16 @@ import time
 with open("enrich/cache.json") as cache_f:
     cache = json.load(cache_f)
 
-BLACKLIST = [
-    "P VAN DER BIJL",
-    "Paul van der Bijl",
-    "Paul Van Der Bijl",
-    "P. Van der Bijl",
-    "Y.Y. Poon",
-    "Y.Y. Poon eo",
-]
-
+with open("enrich/personal.txt") as personal_f:
+    PERSONAL = personal_f.read().split("\n")
 
 def get_category(party):
+    if party in PERSONAL:
+        return "personal"
     if party in cache:
         return cache[party]
     else:
-        # return "unknown"
+        return "unknown"
         while True:
             try:
                 # TODO use fixed set of categories
@@ -48,12 +43,6 @@ for file in os.listdir("output/"):
     if file.endswith(".json"):
         with open(f"output/{file}") as f:
             transactions = json.load(f)
-            transactions = list(
-                filter(
-                    lambda transaction: transaction["party"] not in BLACKLIST,
-                    transactions,
-                )
-            )
             for transaction in transactions:
                 party = transaction["party"]
                 transaction["category"] = get_category(party)

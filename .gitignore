@@ -165,3 +165,7 @@ output/
 key.sh
 
 cache.json
+
+enrich/fixed.txt
+enrich/personal.txt
+loaders/accounts.txt
