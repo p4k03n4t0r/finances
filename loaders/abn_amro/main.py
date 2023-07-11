@@ -52,9 +52,14 @@ def get_description(entry):
     return description
 
 def get_is_savings(entry):
-    if "NtryDtls" not in entry or "CdtrAcct" not in entry["NtryDtls"]["TxDtls"]["RltdPties"]:
+    if "NtryDtls" not in entry:
         return False
-    account =  entry["NtryDtls"]["TxDtls"]["RltdPties"]["CdtrAcct"]["Id"]["IBAN"]
+    if "CdtrAcct" in entry["NtryDtls"]["TxDtls"]["RltdPties"]:
+        account =  entry["NtryDtls"]["TxDtls"]["RltdPties"]["CdtrAcct"]["Id"]["IBAN"]
+    elif "DbtrAcct" in entry["NtryDtls"]["TxDtls"]["RltdPties"]:
+        account =  entry["NtryDtls"]["TxDtls"]["RltdPties"]["DbtrAcct"]["Id"]["IBAN"]
+    else:
+        return False
     return account in ACCOUNTS
 
 for file in os.listdir("input/"):
