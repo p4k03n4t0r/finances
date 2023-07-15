@@ -7,7 +7,7 @@ def enrich_with_fixed():
 
 
     def is_fixed(transaction):
-        return transaction["party"] in fixed_list
+        return "fixed" if transaction["party"] in fixed_list else "flexible"
 
 
     for file in os.listdir("output/"):

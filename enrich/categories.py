@@ -8,23 +8,23 @@ class CATEGORY(Enum):
     GROCERIES = 1
     TRANSPORTATION = 2
     INSURANCES = 3
-    UTILITIES = 4
+    UTILITIES = 4 # regular costs
     PETS = 5
     CLOTHES =6 
     SHOPPING =7 
-    FOOD = 8
+    FOOD = 8 # dinner, take-out, food-2-go
     OTHER = 9
     DONATIONS =10 
     RENT = 11
     GOVERNMENT = 12
     HEALTH = 13
-    BEAUTY = 14
-    UNKNOWN = 15
+    BEAUTY = 14 # could be shopping?
+    UNKNOWN = 15 # to be researched
     SALARY = 16
-    PERSONAL = 17
-    ENTERTAINMENT = 18
+    PERSONAL = 17 # transfers to other personal accounts
+    ENTERTAINMENT = 18 # including holidays
     EDUCATION = 19
-    HOUSE = 20
+    HOUSE = 20 # necessary for home, so no shopping
 
 
 def enrich_with_categories():
@@ -72,8 +72,8 @@ def enrich_with_categories():
         if party in cache:
             return cache[party]
         else:
-            return "unknown"
-            # return decide_category_manual(transaction)
+            # return "unknown"
+            return decide_category_manual(transaction)
             # return decide_category_openai(party)
 
 
