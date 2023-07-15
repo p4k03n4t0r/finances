@@ -1,1 +1,1 @@
-curl -X GET "localhost:5601/api/kibana/dashboards/export?dashboard=3d6a3400-1e3e-11ee-bcca-47caf8d80a09" -H 'kbn-xsrf: true' > insert/dashboard.json
+curl -X GET "localhost:5601/api/kibana/dashboards/export?dashboard=50ca3e00-233e-11ee-b8d1-6b155a3da666" -H 'kbn-xsrf: true' > insert/dashboard.json

@@ -28,7 +28,7 @@ def load_rabobank():
                             "credit_or_debit": amount_sign,
                             "party": transaction["Naam tegenpartij"],
                             "description": transaction["Omschrijving-1"],
-                            "account_balance": transaction["Saldo na trn"],
+                            "account_balance": float(transaction["Saldo na trn"].replace("+","").replace(",",".")),
                             "bank": "Rabobank",
                         }
                     )

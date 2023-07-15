@@ -24,6 +24,7 @@ class CATEGORY(Enum):
     PERSONAL = 17
     ENTERTAINMENT = 18
     EDUCATION = 19
+    HOUSE = 20
 
 
 def enrich_with_categories():
